@@ -7,6 +7,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: 'views/index.html',
       controller: 'LoginController'
     }).
+   when('/analytics', {
+      templateUrl: 'views/analitics.html',
+      controller: 'AnalyticsController'
+    }).
     otherwise({
       redirectTo: '/login'
     });
@@ -14,3 +18,4 @@ myApp.config(['$routeProvider', function($routeProvider) {
 
 
 }]);
+
