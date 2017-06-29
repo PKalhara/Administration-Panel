@@ -1,14 +1,14 @@
-myApp.controller('LoginController', ['$scope','$http', function($scope,$http) {
+myApp.controller('LoginController', ['$scope','$http','$location','toastr', function($scope,$http,$location,toastr) {
 
     $scope.init = function(){
 
         console.log("Init started AdmiLT");
-        $scope.appConfig="http://localhost:3000";
+        $scope.appConfig="http://localhost:3001";
         $scope.all;
-        $scope.getAll();
+       // $scope.getAll();
         $scope.email="p@gmail.com";   
         $scope.password="123";
-        $scope.login();
+       // $scope.login();
 
     };
     
@@ -16,12 +16,18 @@ myApp.controller('LoginController', ['$scope','$http', function($scope,$http) {
         console.log($scope.email);
         console.log($scope.password);
         
-        $http.post($scope.appConfig+'/authUser',{
-            email: $scope.email,   
-            password: $scope.password
+        $http.post($scope.appConfig+'/login', {
+                email: $scope.email,
+                password: $scope.password
             }).success(
                 function(data){
-                    console.log(data)
+                    console.log(data.status)
+                    if(data.status){
+                    $location.url('/analytics');
+                    toastr.info('Successfully Logged In!!!', data.user[0].fname);
+                    }else{
+                        
+                    }
                 }
             ).error(
                 function(error){
