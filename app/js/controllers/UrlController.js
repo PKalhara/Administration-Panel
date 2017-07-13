@@ -1,4 +1,4 @@
-myApp.controller('UrlController', ['$scope','$http','$location','toastr', function($scope,$http,$location,toastr) {
+myApp.controller('UrlController', ['$scope','$http','$q','$location','toastr', function($scope,$http,$q,$location,toastr) {
 
     $scope.init = function(){
 
@@ -19,7 +19,8 @@ myApp.controller('UrlController', ['$scope','$http','$location','toastr', functi
                 url: $scope.password
             }).success(
                 function(data){
-                    console.log(data.status)
+                    console.log(data);
+                     $location.url('/analytics');
                 }
             ).error(
                 function(error){
@@ -28,13 +29,12 @@ myApp.controller('UrlController', ['$scope','$http','$location','toastr', functi
             );
     }
     
-    $scope.getAll = function () {
+    $scope.load = function () {
     
-    
-        $http.post($scope.appConfig+'/getAll').success(
+       $http.get($scope.appConfig+'/my_file.json', {
+            }).success(
                 function(data){
-                    console.log(data)
-                    $scope.all=data
+                    console.log(data.applications);
                 }
             ).error(
                 function(error){

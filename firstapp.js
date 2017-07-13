@@ -6,6 +6,7 @@ var bodyparser = require('body-parser');
 var Items = require("./models/Items");
 app.use(express.static("./app"));
 const wappalyzer = require('wappalyzer');
+const fs = require('fs');
 
 
 var connection = mysql.createConnection({
@@ -18,10 +19,8 @@ connection.query('USE test');
 
 app.set('port',3000);
 
-app.set('views',path.join(__dirname,'views'));
-app.set('view engine','jade');
-
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname,'C:\projects\New folder (2)\InterviewUI\views\my_file.json')));
 
 app.use(bodyparser.urlencoded({ extended: false }));
 
@@ -31,9 +30,18 @@ app.get('/',function(req,res){
 
 app.get('/an/:url',function(req,res){
 	
+
+	
 	 wappalyzer.run(['http://'+req.params.url, '--quiet'], function(stdout, stderr) {
 	if ( stdout ) {
-		process.stdout.write(stdout);
+		//process.stdout.write(stdout);
+		var stream = fs.createWriteStream("my_file.json");
+        stream.once('open', function(fd) {
+          stream.write(stdout);
+          stream.end();
+        });
+        
+        res.status(200).send("success");
 	}
 
 	if ( stderr ) {
