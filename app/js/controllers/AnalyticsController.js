@@ -4,20 +4,25 @@ myApp.controller('AnalyticsController', ['$scope','$http', function($scope,$http
 
         console.log("Init started Anatlitics");
         $scope.appConfig="http://localhost:3000";
-        $scope.all;
-        $scope.getAll();
-        $scope.x=[];
+//        $scope.all;
+//        $scope.getAll();
+//        $scope.x=[];
         $scope.majorOne;
         $scope.majorTwo;
         $scope.majorThree;
         $scope.majorFour;
-        
-        $scope.xTag=[];
-        $scope.subDomain=[];
-        $scope.majorOneTag;
-        $scope.majorTwoTag;
-        $scope.majorThreeTag;
-        $scope.majorFourTag;
+        $scope.majorFive;
+        $scope.majorSix;
+        $scope.majorSeven;
+        $scope.majorEight;
+//        
+//        $scope.xTag=[];
+//        $scope.subDomain=[];
+//        $scope.majorOneTag;
+//        $scope.majorTwoTag;
+//        $scope.majorThreeTag;
+//        $scope.majorFourTag;
+        $scope.load();
 
     };
     
@@ -64,6 +69,30 @@ myApp.controller('AnalyticsController', ['$scope','$http', function($scope,$http
                     }
                    // console.log($scope.subDomain);
 
+                }
+            ).error(
+                function(error){
+                  console.log(error)
+                }
+            );
+        
+    }
+    
+    $scope.load = function () {
+    
+       $http.get($scope.appConfig+'/my_file.json', {
+            }).success(
+                function(data){
+                    console.log(data.applications[0].name);
+                    
+                    $scope.majorOne=data.applications[0].name;
+                    $scope.majorTwo=data.applications[1].name;
+                    $scope.majorThree=data.applications[2].name;
+                    $scope.majorFour=data.applications[3].name;
+                    $scope.majorFive=data.applications[4].name;
+                    $scope.majorSix=data.applications[5].name;
+                    $scope.majorSeven=data.applications[6].name;
+                    $scope.majorEight=data.applications[7].name;
                 }
             ).error(
                 function(error){
