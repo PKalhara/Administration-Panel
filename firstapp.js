@@ -25,14 +25,20 @@ app.use(express.static(path.join(__dirname,'C:\projects\New folder (2)\Interview
 app.use(bodyparser.urlencoded({ extended: false }));
 
 app.get('/',function(req,res){
-	  res.sendfile('app/index.html');
+	  res.sendfile('app/urls.html');
 });
 
 app.get('/an/:url',function(req,res){
-	
-
-	
-	 wappalyzer.run(['http://'+req.params.url, '--quiet'], function(stdout, stderr) {
+    
+	var url="";
+    
+    if(req.params.url.indexOf("localhost") > -1) {
+        url="http://"+req.params.url;
+    }else{
+        url="https://"+req.params.url;
+    }
+	console.log(url);
+	 wappalyzer.run([url, '--quiet'], function(stdout, stderr) {
 	if ( stdout ) {
 		//process.stdout.write(stdout);
 		var stream = fs.createWriteStream("my_file.json");

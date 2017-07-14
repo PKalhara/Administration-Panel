@@ -83,16 +83,31 @@ myApp.controller('AnalyticsController', ['$scope','$http', function($scope,$http
        $http.get($scope.appConfig+'/my_file.json', {
             }).success(
                 function(data){
-                    console.log(data.applications[0].name);
+                    console.log(data.applications);
                     
                     $scope.majorOne=data.applications[0].name;
                     $scope.majorTwo=data.applications[1].name;
                     $scope.majorThree=data.applications[2].name;
                     $scope.majorFour=data.applications[3].name;
-                    $scope.majorFive=data.applications[4].name;
-                    $scope.majorSix=data.applications[5].name;
-                    $scope.majorSeven=data.applications[6].name;
-                    $scope.majorEight=data.applications[7].name;
+//                    $scope.majorFive=data.applications[4].name;
+//                    $scope.majorSix=data.applications[5].name;
+//                    $scope.majorSeven=data.applications[6].name;
+//                    $scope.majorEight=data.applications[7].name;
+                    
+                    $scope.majorOneConfidence=data.applications[0].confidence;
+                    $scope.majorTwoConfidence=data.applications[1].confidence;
+                    $scope.majorThreeConfidence=data.applications[2].confidence;
+                    $scope.majorFourConfidence=data.applications[3].confidence;
+                    
+                     $scope.majorOneFrame=data.applications[0].categories[0];
+                     $scope.majorTwoFrame=data.applications[1].categories[0];
+                     $scope.majorThreeFrame=data.applications[2].categories[0];
+                     $scope.majorFourFrame=data.applications[3].categories[0];
+                    
+                     $scope.majorOneTag=data.applications[0].icon;
+                     $scope.majorTwoTag=data.applications[1].icon;
+                     $scope.majorThreeTag=data.applications[2].icon;
+                     $scope.majorFourTag=data.applications[3].icon;
                 }
             ).error(
                 function(error){

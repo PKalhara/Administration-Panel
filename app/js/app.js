@@ -3,20 +3,20 @@ var myApp = angular.module('myApp', ['ngRoute','toastr']);
 
 myApp.config(['$routeProvider','toastrConfig', function($routeProvider,toastrConfig) {
   $routeProvider.
-    when('/login', {
-      templateUrl: 'views/index.html',
-      controller: 'LoginController'
+   when('/urls', {
+      templateUrl: 'views/urls.html',
+      controller: 'UrlController'
     }).
    when('/analytics', {
       templateUrl: 'views/analitics.html',
       controller: 'AnalyticsController'
     }).
-	when('/urls', {
-      templateUrl: 'views/urls.html',
-      controller: 'UrlController'
+    when('/login', {
+      templateUrl: 'views/index.html',
+      controller: 'LoginController'
     }).
     otherwise({
-      redirectTo: '/login'
+      redirectTo: '/urls'
     });
 
 angular.extend(toastrConfig, {

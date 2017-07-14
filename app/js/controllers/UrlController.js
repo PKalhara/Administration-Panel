@@ -6,21 +6,31 @@ myApp.controller('UrlController', ['$scope','$http','$q','$location','toastr', f
         $scope.appConfig="http://localhost:3000";
         $scope.all;
        // $scope.getAll();
-        $scope.email="p@gmail.com";   
-        $scope.password="";
+        $scope.email="p@gmail.com"; 
+        $scope.url="localhost:3000/";
+        $scope.isLoading=false;
+        $scope.isAnalyse=true;
+        
+        
        // $scope.login();
 
     };
     
     $scope.login = function (){
-        console.log($scope.password);
         
-        $http.get($scope.appConfig+'/an/'+$scope.password, {
-                url: $scope.password
+         $scope.isLoading=true;
+         $scope.isAnalyse=false;
+    
+        console.log($scope.url);
+         
+        $http.get($scope.appConfig+'/an/'+$scope.url, {
+                url: $scope.url
             }).success(
                 function(data){
                     console.log(data);
+                    
                      $location.url('/analytics');
+                    
                 }
             ).error(
                 function(error){

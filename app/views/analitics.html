@@ -195,67 +195,43 @@
                 <table class="table no-margin">
                   <thead>
                   <tr>
-                    <th>Order ID</th>
-                    <th>Item</th>
-                    <th>Status</th>
-                    <th>Popularity</th>
+                    <th>Name</th>
+                    <th>Confidence</th>
+                    <th>Icon</th>
+                    <th>FrameWork</th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
-                    <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                    <td>Call of Duty IV</td>
-                    <td><span class="label label-success">Shipped</span></td>
+                    <td><a href="pages/examples/invoice.html">{{ majorOne }}</a></td>
+                    <td>{{majorOneConfidence}}</td>
+                    <td><span class="label label-success">{{majorOneTag}}</span></td>
                     <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                      <div class="sparkbar" data-color="#00a65a" data-height="20">{{majorOneFrame}}</div>
                     </td>
                   </tr>
                   <tr>
-                    <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                    <td>Samsung Smart TV</td>
-                    <td><span class="label label-warning">Pending</span></td>
+                    <td><a href="pages/examples/invoice.html">{{ majorTwo }}</a></td>
+                    <td>{{majorTwoConfidence}}</td>
+                    <td><span class="label label-warning">{{majorTwoTag}}</span></td>
                     <td>
-                      <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                      <div class="sparkbar" data-color="#f39c12" data-height="20">{{majorTwoFrame}}</div>
                     </td>
                   </tr>
                   <tr>
-                    <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                    <td>iPhone 6 Plus</td>
-                    <td><span class="label label-danger">Delivered</span></td>
+                    <td><a href="pages/examples/invoice.html">{{ majorThree }}</a></td>
+                    <td>{{majorThreeConfidence}}</td>
+                    <td><span class="label label-danger">{{majorThreeTag}}</span></td>
                     <td>
-                      <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                      <div class="sparkbar" data-color="#f56954" data-height="20">{{majorThreeFrame}}</div>
                     </td>
                   </tr>
                   <tr>
-                    <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                    <td>Samsung Smart TV</td>
-                    <td><span class="label label-info">Processing</span></td>
+                    <td><a href="pages/examples/invoice.html">{{ majorFour }}</a></td>
+                    <td>{{majorFourConfidence}}</td>
+                    <td><span class="label label-info">{{majorFourTag}}</span></td>
                     <td>
-                      <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                    <td>Samsung Smart TV</td>
-                    <td><span class="label label-warning">Pending</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                    <td>iPhone 6 Plus</td>
-                    <td><span class="label label-danger">Delivered</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                    <td>Call of Duty IV</td>
-                    <td><span class="label label-success">Shipped</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                      <div class="sparkbar" data-color="#00c0ef" data-height="20">{{majorFourFrame}}</div>
                     </td>
                   </tr>
                   </tbody>
@@ -280,7 +256,7 @@
         
             <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Recently Added Products</h3>
+              <h3 class="box-title">Frameworks Used</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -296,10 +272,10 @@
                     <img src="dist/img/default-50x50.gif" alt="Product Image">
                   </div>
                   <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">Samsung TV
+                    <a href="javascript:void(0)" class="product-title">{{majorOne}}
                       <span class="label label-warning pull-right">$1800</span></a>
                         <span class="product-description">
-                          Samsung 32" 1080p 60Hz LED Smart HDTV.
+                          {{majorOneFrame}}
                         </span>
                   </div>
                 </li>
@@ -309,10 +285,10 @@
                     <img src="dist/img/default-50x50.gif" alt="Product Image">
                   </div>
                   <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">Bicycle
+                    <a href="javascript:void(0)" class="product-title">{{majorTwo}}
                       <span class="label label-info pull-right">$700</span></a>
                         <span class="product-description">
-                          26" Mongoose Dolomite Men's 7-speed, Navy Blue.
+                          {{majorTwoFrame}}
                         </span>
                   </div>
                 </li>
@@ -322,9 +298,9 @@
                     <img src="dist/img/default-50x50.gif" alt="Product Image">
                   </div>
                   <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">Xbox One <span class="label label-danger pull-right">$350</span></a>
+                    <a href="javascript:void(0)" class="product-title">{{majorThree}} <span class="label label-danger pull-right">$350</span></a>
                         <span class="product-description">
-                          Xbox One Console Bundle with Halo Master Chief Collection.
+                          {{majorThreeFrame}}
                         </span>
                   </div>
                 </li>
@@ -334,10 +310,10 @@
                     <img src="dist/img/default-50x50.gif" alt="Product Image">
                   </div>
                   <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">PlayStation 4
+                    <a href="javascript:void(0)" class="product-title">{{majorFour}}
                       <span class="label label-success pull-right">$399</span></a>
                         <span class="product-description">
-                          PlayStation 4 500GB Console (PS4)
+                          {{majorFourFrame}}
                         </span>
                   </div>
                 </li>
@@ -357,8 +333,8 @@
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">{{majorOneTag}}</span>
-              <span class="info-box-number">5,200</span>
+              <span class="info-box-text">{{majorOne}}</span>
+              <span class="info-box-number">{{majorOneConfidence}}</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 50%"></div>
@@ -374,8 +350,8 @@
             <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">{{majorTwoTag}}</span>
-              <span class="info-box-number">92,050</span>
+              <span class="info-box-text">{{majorTwo}}</span>
+              <span class="info-box-number">{{majorTwoConfidence}}</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 20%"></div>
@@ -391,8 +367,8 @@
             <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">{{majorThreeTag}}</span>
-              <span class="info-box-number">114,381</span>
+              <span class="info-box-text">{{majorThree}}</span>
+              <span class="info-box-number">{{majorThreeConfidence}}</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
@@ -408,8 +384,8 @@
             <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">{{majorFourTag}}</span>
-              <span class="info-box-number">163,921</span>
+              <span class="info-box-text">{{majorFour}}</span>
+              <span class="info-box-number">{{majorFourConfidence}}</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 40%"></div>
