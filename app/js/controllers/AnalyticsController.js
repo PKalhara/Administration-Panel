@@ -89,6 +89,10 @@ myApp.controller('AnalyticsController', ['$scope','$http', function($scope,$http
                     $scope.majorTwo=data.applications[1].name;
                     $scope.majorThree=data.applications[2].name;
                     $scope.majorFour=data.applications[3].name;
+                    $scope.majorFive=data.applications[4].name;
+                    $scope.majorSix=data.applications[5].name;
+                    $scope.majorSeven=data.applications[6].name;
+                    $scope.majorEight=data.applications[8].name;
 //                    $scope.majorFive=data.applications[4].name;
 //                    $scope.majorSix=data.applications[5].name;
 //                    $scope.majorSeven=data.applications[6].name;
@@ -98,16 +102,28 @@ myApp.controller('AnalyticsController', ['$scope','$http', function($scope,$http
                     $scope.majorTwoConfidence=data.applications[1].confidence;
                     $scope.majorThreeConfidence=data.applications[2].confidence;
                     $scope.majorFourConfidence=data.applications[3].confidence;
+                    $scope.majorFiveConfidence=data.applications[4].confidence;
+                    $scope.majorSixConfidence=data.applications[5].confidence;
+                    $scope.majorSevenConfidence=data.applications[6].confidence;
+                    $scope.majorEightConfidence=data.applications[8].confidence;
                     
                      $scope.majorOneFrame=data.applications[0].categories[0];
                      $scope.majorTwoFrame=data.applications[1].categories[0];
                      $scope.majorThreeFrame=data.applications[2].categories[0];
                      $scope.majorFourFrame=data.applications[3].categories[0];
+                     $scope.majorFiveFrame=data.applications[4].categories[0];
+                     $scope.majorSixFrame=data.applications[5].categories[0];
+                     $scope.majorSevenFrame=data.applications[6].categories[0];
+                     $scope.majorEightFrame=data.applications[8].categories[0];
                     
                      $scope.majorOneTag=data.applications[0].icon;
                      $scope.majorTwoTag=data.applications[1].icon;
                      $scope.majorThreeTag=data.applications[2].icon;
                      $scope.majorFourTag=data.applications[3].icon;
+                     $scope.majorFiveTag=data.applications[4].icon;
+                     $scope.majorSixTag=data.applications[5].icon;
+                     $scope.majorSevenTag=data.applications[6].icon;
+                     $scope.majorEightTag=data.applications[8].icon;
                 }
             ).error(
                 function(error){
